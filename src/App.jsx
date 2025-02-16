@@ -48,11 +48,11 @@ function App() {
           <TypeAnimation
           key={userName}
             sequence={[
-              `What are you planning to do ${userName ? userName : ''}?`,
+              `What are you planning to do, ${userName ? userName : 'User'}?`,
               1000,
               '',
               1000,
-              `${getGreeting()} ${userName ? userName : ''}`,
+              `${getGreeting()}, ${userName ? userName : 'User'}`,
               1000,
               '',
               1000,

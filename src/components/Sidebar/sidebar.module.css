@@ -6,14 +6,14 @@
   }
   
   .links {
-    flex-grow: 1; /* Take up available space */
-    margin-bottom: 20px; /* Add margin to separate links from the user section */
+    flex-grow: 1;
+    margin-bottom: 20px;
   }
   
   .link {
     display: flex;
     align-items: center;
-    margin: 15px 0; /* Increase margin between links */
+    margin: 15px 0;
     color: var(--purple);
     text-decoration: none;
     font-size: 18px;
@@ -39,7 +39,7 @@
     width: 50%;
     padding: 8px;
     margin: 10px 0;
-    background: transparent; /* Make the background transparent */
+    background: transparent;
     border: none; 
     border-bottom: 1px solid var(--purple);
     color: var(--purple);
@@ -47,7 +47,7 @@
   }
   
   .input:focus {
-    outline: none; /* Remove the outline on focus */
+    outline: none;
   }
   
   .button {

@@ -9,12 +9,12 @@ const CustomSidebar = ({ sidebarOpen, onSetSidebarOpen, setUserName, children })
 
   const handleSaveName = (e) => {
     setName(e.target.value);
-    localStorage.setItem('userName', e.target.value);
-    setUserName(e.target.value);
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
+      localStorage.setItem('userName', name);
+      setUserName(name);
       setIsEditing(false);
     }
   };
@@ -35,13 +35,14 @@ const CustomSidebar = ({ sidebarOpen, onSetSidebarOpen, setUserName, children })
             </a>
           </div>
           <div className={styles.userSection}>
-            <div className={styles.link} onClick={() => setIsEditing(!isEditing)}>
+            <div className={styles.link} onClick={() => setIsEditing(true)}>
               <FaUserEdit className={styles.icon}/> 
               {isEditing ? (
                 <input
                   type="text"
                   value={name}
                   onChange={handleSaveName}
+                  onKeyDown={handleKeyDown}
                   className={styles.input}
                   autoFocus
                 />
