@@ -17,10 +17,11 @@
     color: var(--purple);
     text-decoration: none;
     font-size: 18px;
+    cursor: pointer;
   }
   
   .link:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
   
   .icon {
