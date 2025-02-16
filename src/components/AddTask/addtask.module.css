@@ -1,0 +1,138 @@
+.newTaskContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.newTaskForm {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 750px;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--orange), var(--purple));
+  border-radius: 8px;
+}
+
+.newTaskFormInput {
+  flex: 1;
+  padding: 0 16px;
+  height: 54px;
+  color: white;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 8px 0 0 8px;
+}
+
+.addTaskButton {
+  height: 54px;
+  width: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  color: white;
+  cursor: pointer;
+}
+
+.addTaskButton .icon {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.addTaskButton:hover {
+  background: transparent;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box
+}
+
+.modal:focus {
+  outline: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modalTitle {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--gray);
+  text-align: left;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalField {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalField label {
+  margin-bottom: 8px;
+}
+
+.modalInput, .modalDatepicker, .modalSelect {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid var(--gray1);
+  border-radius: 4px;
+}
+
+.modalButton {
+  padding: 10px;
+  background: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--gray);
+}

@@ -1,0 +1,32 @@
+:root {
+  --orange:#F4512C;
+  --purple:#5E1B89;
+  --white: #F8FFFE;
+  --gray: #475569;
+  --gray1: #CCCCCC;
+  --gray2: #555555;
+  --gray3: #999999;
+  --gray4: #888888;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: 'Lato', san-serif;
+}
+
+body {
+  background: var(--white);
+  min-height: 100vh;  
+}
+
+button {
+  cursor: pointer;
+}
+
+.header-title {
+  text-align: center;
+  color: var(--purple);
+  margin-top: 50px;
+}

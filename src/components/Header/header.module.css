@@ -1,0 +1,18 @@
+.header {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 16px;
+  }
+  
+  .iconContainer {
+    position: absolute;
+    left: 32px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
