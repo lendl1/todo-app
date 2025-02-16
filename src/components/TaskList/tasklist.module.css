@@ -126,7 +126,7 @@
 .taskDescription {
   flex: 1;
   margin-left: 16px;
-  color: var(--gray2);
+  color: var(--gray3);
 }
 
 .taskDueDate {
