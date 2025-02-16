@@ -115,11 +115,12 @@ export function TaskList({ tasks, setTasks }) {
     setIsModalOpen(false);
   };
 
-  // Sort tasks so that completed tasks are at the bottom
   const sortedTasks = [...tasks].sort((a, b) => a.completed - b.completed);
 
-  // Calculate the number of completed tasks
   const completedTasksCount = tasks.filter(task => task.completed).length;
+
+  const prefetchImage = new Image();
+  prefetchImage.src = noTaskImage;
 
   return (
     <div className={styles.container}>
