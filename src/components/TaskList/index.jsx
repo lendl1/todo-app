@@ -141,7 +141,7 @@ export function TaskList({ tasks, setTasks }) {
               <button className={styles.completeButton} onClick={() => handleComplete(task)}>
                 {task.completed ? <MdOutlineCheckCircleOutline className={`${styles.icon} ${styles.check}`} /> : <MdOutlineCircle className={`${styles.icon} ${styles.circle}`} />}
               </button>
-              <span>{task.text}</span>
+              <span className={styles.taskText}>{task.text}</span>
               <span className={styles.taskDescription}>{task.description}</span>
               <span className={styles.taskDueDate}>Due in {formatDistanceToNow(new Date(task.dueDate), { addSuffix: true })}</span>
               <button onClick={() => handleEdit(task)} className={styles.editButton}>
