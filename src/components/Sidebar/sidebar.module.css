@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 300px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 .sidebarContent {
@@ -48,7 +55,7 @@
   padding: 8px;
   margin: 10px 0;
   background: transparent;
-  border: none; 
+  border: none;
   border-bottom: 1px solid var(--purple);
   color: var(--purple);
   font-size: 16px;
@@ -68,4 +75,16 @@
 
 .button:hover {
   background-color: var(--purple);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sidebarContainer {
+      width: 80vw;
+      max-width: 300px;
+  }
+  .sidebarContent {
+      overflow-y: auto;
+      max-height: calc(100vh - 50px);
+  }
 }
