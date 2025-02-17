@@ -232,10 +232,18 @@
 }
 
 .noTasksImage {
-  max-width: 25%;
-  height: auto;
+  max-width: 200px;
   margin-bottom: 5px;
   user-select: none;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+@media (max-width: 768px) {
+  .noTasksImage {
+    max-width: 150px;
+  }
 }
 
 .noTasksMessage {
