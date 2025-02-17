@@ -2,7 +2,7 @@
   --orange:#F4512C;
   --purple:#5E1B89;
   --white: #F8FFFE;
-  --gray: #475569;
+  --gray:  #475569;
   --gray1: #CCCCCC;
   --gray2: #555555;
   --gray3: #999999;
@@ -16,9 +16,10 @@
   font-family: 'Lato', san-serif;
 }
 
-body {
+html, body {
   background: var(--white);
-  min-height: 100vh;  
+  height: 100%;
+  overflow: hidden;
 }
 
 button {
