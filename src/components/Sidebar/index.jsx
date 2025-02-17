@@ -56,7 +56,15 @@ const CustomSidebar = ({ sidebarOpen, onSetSidebarOpen, setUserName, children })
       open={sidebarOpen}
       onSetOpen={onSetSidebarOpen}
       pullRight={true}
-      styles={{ sidebar: { background: "#F8FFFE", width: "250px", overflow: "hidden" } }}
+      styles={{ 
+        sidebar: { 
+          background: "#F8FFFE", 
+          width: "80vw",
+          maxWidth: "300px",
+          overflow: "hidden" 
+        } 
+      }}
+      
     >
       {children}
     </Sidebar>

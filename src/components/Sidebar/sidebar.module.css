@@ -77,14 +77,9 @@
   background-color: var(--purple);
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
   .sidebarContainer {
       width: 80vw;
       max-width: 300px;
-  }
-  .sidebarContent {
-      overflow-y: auto;
-      max-height: calc(100vh - 50px);
   }
 }
