@@ -143,7 +143,7 @@ export function TaskList({ tasks, setTasks }) {
               </button>
               <span className={styles.taskText}>{task.text}</span>
               <span className={styles.taskDescription}>{task.description}</span>
-              <span className={styles.taskDueDate}>Due in {formatDistanceToNow(new Date(task.dueDate), { addSuffix: true })}</span>
+              <span className={styles.taskDueDate}>Due {formatDistanceToNow(new Date(task.dueDate), { addSuffix: true })}</span>
               <button onClick={() => handleEdit(task)} className={styles.editButton}>
                 <MdModeEdit className={styles.icon} />
               </button>
