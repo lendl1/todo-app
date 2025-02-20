@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import styles from './addtask.module.css';
 import { TaskList } from '../TaskList';
@@ -56,6 +57,17 @@ export function AddTask({ tasks, setTasks }) {
     setIsModalOpen(false);
   };
 
+  const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+    <input
+      className={styles.modalDatepicker}
+      onClick={onClick}
+      value={value}
+      readOnly
+      ref={ref}
+      placeholder="Select a date and time"
+    />
+  ));
+
   return (
     <div className={styles.newTaskContainer}>
       <Toaster position="bottom-right" />
@@ -111,8 +123,7 @@ export function AddTask({ tasks, setTasks }) {
               onChange={(date) => setDueDate(date)}
               showTimeSelect
               dateFormat="Pp"
-              className={styles.modalDatepicker}
-              placeholderText="Select a date and time"
+              customInput={<CustomInput />}
             />
           </div>
           <button type="submit" className={styles.modalButton}>Add Task</button>

@@ -17,6 +17,7 @@ export function TaskList({ tasks, setTasks }) {
   const [dueDate, setDueDate] = useState(new Date());
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isDeleteAllModalOpen, setIsDeleteAllModalOpen] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState(null);
   const [isToastVisible, setIsToastVisible] = useState(false);
 
@@ -37,6 +38,12 @@ export function TaskList({ tasks, setTasks }) {
     saveTasksToLocalStorage(newTasks);
   };
 
+  const handleCompleteAll = () => {
+    const newTasks = tasks.map(task => ({ ...task, completed: true }));
+    setTasks(newTasks);
+    saveTasksToLocalStorage(newTasks);
+  };
+
   const handleEdit = (taskToEdit) => {
     setEditingTask(taskToEdit);
     setEditingText(taskToEdit.text);
@@ -48,6 +55,22 @@ export function TaskList({ tasks, setTasks }) {
   const handleDelete = (task) => {
     setTaskToDelete(task);
     setIsDeleteModalOpen(true);
+  };
+
+  const handleDeleteAll = () => {
+    setIsDeleteAllModalOpen(true);
+  };
+
+  const confirmDeleteAll = () => {
+    setTasks([]);
+    saveTasksToLocalStorage([]);
+    if (!isToastVisible) {
+      setIsToastVisible(true);
+      toast.success('All tasks were successfully deleted.', {
+        onClose: () => setIsToastVisible(false)
+      });
+    }
+    setIsDeleteAllModalOpen(false);
   };
 
   const confirmDelete = () => {
@@ -127,6 +150,10 @@ export function TaskList({ tasks, setTasks }) {
       <Toaster position="bottom-right" />
       <div className={styles.header}>
         <span>Tasks <span className={styles.tasksCount}>{tasks.length}</span></span>
+        <div className={styles.headerButtons}>
+          <button onClick={handleCompleteAll} className={styles.headerCompleteButton}>Complete All</button>
+          <button onClick={handleDeleteAll} className={styles.headerDeleteButton}>Delete All</button>
+        </div>
         <span>Completed <span className={styles.completedTasks}>{completedTasksCount} of {tasks.length}</span></span>
       </div>
       {tasks.length === 0 ? (
@@ -213,6 +240,24 @@ export function TaskList({ tasks, setTasks }) {
         <div className={styles.modalActions}>
           <button onClick={() => setIsDeleteModalOpen(false)} className={styles.cancelButton}>Cancel</button>
           <button onClick={confirmDelete} className={styles.modalButton}>Yes, Delete</button>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={isDeleteAllModalOpen}
+        onRequestClose={() => setIsDeleteAllModalOpen(false)}
+        contentLabel="Delete All Tasks"
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+      >
+        <button className={styles.closeButton} onClick={() => setIsDeleteAllModalOpen(false)}>
+          <MdClose />
+        </button>
+        <h2 className={styles.modalTitle}>Delete All Tasks</h2>
+        <p>Are you sure you want to delete all tasks?</p>
+        <div className={styles.modalActions}>
+          <button onClick={() => setIsDeleteAllModalOpen(false)} className={styles.cancelButton}>Cancel</button>
+          <button onClick={confirmDeleteAll} className={styles.modalButton}>Yes, Delete All</button>
         </div>
       </Modal>
     </div>
